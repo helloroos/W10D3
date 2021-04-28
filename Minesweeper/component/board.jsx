@@ -12,12 +12,12 @@ class Board extends React.Component {
         return(
             <div>
                 {board.map((row, rIdx) => {
-                    <div></div>
-                    return row.map((tile, tIdx) => {
-                        <Tile board={board} pos={}/>
-                    })
-                }
-                )}
+                    <div key={rIdx}>
+                        {row.map((tile, tIdx) => {
+                            return <Tile key={tIdx} tiles={tile} updateGame={this.props.updateGame}/>
+                        })}
+                    </div>
+                })}
             </div>
         )
     }
