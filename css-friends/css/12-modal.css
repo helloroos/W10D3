@@ -1,5 +1,11 @@
 /* PHASE 12: Modal */
 
+.is-open {
+  display: block;
+}
+
+
+
 .modal-screen {
   position: fixed;
   top: 0;
@@ -12,4 +18,5 @@
 
 .modal-form{
   position: absolute;
+  width: 360;
 }

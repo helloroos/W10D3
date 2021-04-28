@@ -19,6 +19,22 @@
   <link rel="stylesheet" href="css/10-posts.css" type="text/css">
   <link rel="stylesheet" href="css/11-icons.css" type="text/css">
   <link rel="stylesheet" href="css/12-modal.css" type="text/css">
+  <script src="../shared/js/jquery.js"></script>
+  <script>
+    $(function () {
+
+      $("body").on("click", ".js-modal-open", function (event) {
+        event.preventDefault();
+        $(".modal").addClass("is-open");
+      });
+
+      $("body").on("click", ".js-modal-close", function (event) {
+        event.preventDefault();
+        $(".modal").removeClass("is-open");
+      });
+
+    });
+  </script>
 </head>
 
 <body>
@@ -230,7 +246,7 @@
       </div>
 
     </section>
-    <section class="modal">
+    <section class="modal is-open">
       <div class="modal-screen">
         <h1>screen</h1>
       </div>
@@ -246,7 +262,7 @@
           <label for="">Password
             <input class="input" type="text">
           </label>
-          <button class="submit" type="submit"> Sign In</button>
+          <button class="submit js-modal-close" type="submit">Sign In</button>
         </form>
       </div>
     </section>
