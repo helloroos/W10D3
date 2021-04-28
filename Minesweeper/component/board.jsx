@@ -17,12 +17,12 @@ class Board extends React.Component {
                 )
             });
             return (
-                <div className="grid-container" key={rIdx}> {tiles} </div>
+                <div key={rIdx}> {tiles} </div>
             )
         });
 
         return (
-            <div className="fixme">
+            <div className="grid-container">
                 {rows}
             </div>
         )

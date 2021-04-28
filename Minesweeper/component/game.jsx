@@ -6,22 +6,38 @@ class Game extends React.Component {
     constructor(props) {
         super(props)
 
-        const boardObject = new Minesweeper.Board(9, 6);
+        const boardObject = new Minesweeper.Board(9, 10);
 
         this.state = {
             board: boardObject
         }
 
         this.updateGame = this.updateGame.bind(this);
+        this.resetGame = this.resetGame.bind(this);
     }
 
-    updateGame() {
-
+    resetGame() {
+        const boardObject = new Minesweeper.Board(9, 10);
+        this.setState({ board: boardObject });
     }
+
+    updateGame(tile, flag) {
+        if (flag) {
+            tile.toggleFlag();
+        } else {
+            tile.explore();
+        };
+        this.setState({ board: this.state.board })
+    };
 
     render() {
+        if (this.state.board.lost() || this.state.board.won()) {
+            console.log("game over")
+            // this.resetGame();
+        }
         return(
-            <div>
+            <div className="game-container">
+
                 <Board board={this.state.board} updateGame={this.updateGame}/>
             </div>
         )

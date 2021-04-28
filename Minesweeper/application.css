@@ -1,8 +1,42 @@
-#root .grid-container{
-  display: block;
-  background: aquamarine;
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.tile-container{
-
+.game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.grid-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: aquamarine;
+    width: 300px;
+    height: 300px;
+}
+
+
+.tile-container, .unexplored, .explored {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightgrey;
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-style: outset;
+    border-width: 4px;
+}
+
+.explored {
+    border-style: inset;
+    background: lightgrey;
+    width: 30px;
+    height: 30px;
+}
+
+
